@@ -1,0 +1,22 @@
+.users-container {
+  flex: 1;
+  padding-left: 50px;
+  margin-right: 50px;
+}
+
+.users-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.users-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.users-container li {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}

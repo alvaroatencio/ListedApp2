@@ -1,0 +1,66 @@
+#panelGestion {
+  margin-top: 30px;
+  background-color: var(--COLOR3);
+  border-radius: 15px 15px 15px 15px;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 20px 0px var(--COLOR3);
+}
+
+#inputCrearUsuario {
+  text-align: center;
+  border: 0;
+  border-radius: 0.25em;
+  background-color: orange;
+  color: #fff;
+  font-size: 1em;
+  width: 150px;
+  height: 38px;
+}
+
+#inputCrearUsuario:hover {
+  background-color: darkorange;
+}
+
+#inputCrearUsuario:disabled {
+  text-align: center;
+  border: 0;
+  border-radius: 0.25em;
+  background-color: darkorange;
+  opacity: 0.5;
+  color: #fff;
+  font-size: 1em;
+  width: 150px;
+  height: 38px;
+}
+
+.botonesGestion:hover {
+  cursor: pointer;
+}
+
+.extra .icon{
+  font-size: 15px;
+  opacity: 0.6;
+  margin-top: 3px;
+}
+
+.extra i{
+  position: absolute;
+  transform: translateX(8px);
+}
+
+.extra input{
+  background-color: #F2F2F2;
+  padding-left: 30px;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.extra:hover{
+  color: var(--COLOR3);
+  transition: 0.5s;
+  opacity: 1;
+  transform: translateY(3px);
+}
