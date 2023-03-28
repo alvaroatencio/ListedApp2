@@ -1,0 +1,48 @@
+.landing-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin:0px;
+  background-color: black;
+}
+
+.landing-text {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.landing-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.landing-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.users-container {
+  flex: 1;
+  padding-left: 50px;
+}
+
+.users-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.users-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.users-container li {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,17 @@
+<div class="cardsContainer mt-5">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let cuenta of cuentasFiltradas">
+      <div class="card-body">
+        <h5 class="card-title">{{ cuenta.titular.nombres }}</h5>
+        <p class="card-text">Alias: {{ cuenta.alias }}</p>
+        <p class="card-text">Banco: {{ cuenta.banco }}</p>
+        <p class="card-text">CBU: {{ cuenta.cbu }}</p>
+        <p class="card-text">Número de cuenta: {{ cuenta.nroCuenta }}</p>
+        <p class="card-text">Sucursal: {{ cuenta.sucursal }}</p>
+      </div>
+    </div>
+    <div *ngIf="cuentasFiltradas.length == 0" class="col-md-12 text-center">
+      <h4>No se encontraron cuentas</h4>
+    </div>
+  </div>
+</div>
