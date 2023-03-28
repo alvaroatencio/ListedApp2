@@ -11,7 +11,7 @@ import {LoginResponse} from "../models/responses/loginResponse";
 export class UsuariosLoginService {
 
   private baseUrl = environment.urlAPI;
-  private loginUrl = `${this.baseUrl}/usuarios/login`;
+  private loginUrl = `${this.baseUrl}/auth/login`;
 
   constructor(private http: HttpClient) { }
 

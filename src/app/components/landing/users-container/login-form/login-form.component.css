@@ -30,12 +30,7 @@ h3{
   border-color: var(--COLOR3);
   color: var(--COLOR3);
 }
-.divsInputs .icon {
-  font-size: 20px;
-  opacity: 0.3;
-  margin-top: 12px;
-  min-width: 40px;
-}
+
 .inputsG {
   border-color: #c9c9c9;
   border-width: 0 0 1px;
@@ -107,6 +102,13 @@ input::placeholder{
   cursor: pointer;
 }
 
+.fa{
+  font-size: 18px;
+  opacity: 0.3;
+  margin-top: 12px;
+  min-width: 40px;
+}
+
 .inputRojo{
   background-color: white;
   margin-bottom: 15px;
@@ -124,3 +126,4 @@ input::placeholder{
 .invalid-feedback::before {
   content: "* ";
 }
+

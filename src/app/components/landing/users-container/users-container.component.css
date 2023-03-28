@@ -1,4 +1,8 @@
 .users-container {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
   flex: 1;
   padding-left: 50px;
   margin-right: 50px;

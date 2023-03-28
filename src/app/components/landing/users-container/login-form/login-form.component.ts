@@ -22,24 +22,17 @@ export class LoginFormComponent {
   login() {
     this.usuariosLoginService.login(this.user, this.password).subscribe(
       (response: LoginResponse) => {
-        if (response.success) {
-          console.log(response.message);
-          console.log(response.token);
           if (response.token != null) {
+            //agregar funcion de guardar en session o en local
             sessionStorage.setItem("token", response.token);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/home']).then();
           } else {
-            console.log(response.message)
-          }
-        } else {
-          console.log(response.message);
-          // Aquí podrías mostrar un mensaje de error al usuario
+            console.log(response.message);
         }
       },
       error => {
         console.log('Ha ocurrido un error');
         console.log(error);
-        // Aquí podrías mostrar un mensaje de error al usuario
       }
     );
   }

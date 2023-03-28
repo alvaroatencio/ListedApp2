@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin:0px;
+  padding:0px;
   background-image: url("src/app/assets/listed.jpg");
   background-size: cover;
   height: 100vh;
@@ -10,10 +11,15 @@
 }
 
 .landing-text {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 35px;
   color: var(--LETTER1);
   font-family: Montserrat,sans-serif;
   flex: 1;
+  margin: 25px;
   padding-left: 50px;
+  padding-right: 50px;
+  height: 400px;
 }
 
 .landing-text h1 {
@@ -26,9 +32,8 @@
   font-size: 1.2rem;
   line-height: 1.5;
   text-align: justify;
-  margin-bottom: 20px;
 }
 
 .loginSection{
-  margin: 50px;
+  margin-right: 50px;
 }
