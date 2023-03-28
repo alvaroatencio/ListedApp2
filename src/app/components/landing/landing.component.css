@@ -2,14 +2,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   margin:0px;
-  background-color: black;
+  background-image: url("src/app/assets/listed.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
 .landing-text {
+  color: var(--LETTER1);
+  font-family: Montserrat,sans-serif;
   flex: 1;
-  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .landing-text h1 {
@@ -25,24 +29,6 @@
   margin-bottom: 20px;
 }
 
-.users-container {
-  flex: 1;
-  padding-left: 50px;
-}
-
-.users-container h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.users-container ul {
-  list-style: none;
-  padding: 0;
-}
-
-.users-container li {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  margin-bottom: 10px;
+.loginSection{
+  margin: 50px;
 }

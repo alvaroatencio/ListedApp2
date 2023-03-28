@@ -1,3 +1,14 @@
 body, html {
   margin: 0;
 }
+
+:root{
+  --COLOR1:#7F00B2;
+  --COLOR2:#8E22BB;
+  --COLOR3:#AB49CC;
+  --COLOR4:#FF0077;
+  --COLOR5:#FF3885;
+  --COLOR6:#FF57AC;
+  --LETTER1:WHITE;
+  --LETTER2:BLACK;
+}
