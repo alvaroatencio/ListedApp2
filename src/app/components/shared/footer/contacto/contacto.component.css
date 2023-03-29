@@ -1,0 +1,31 @@
+form,h3{
+  background-color: var(--COLOR2);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 20px 80px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bolder;
+}
+
+input{
+  margin-left: 20px;
+  border-radius: 30px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+button{
+  border-radius: 30px;
+  width: 100px;
+  background-color: var(--COLOR5);
+  color: var(--LETTER1);
+}
+
+.error{
+  color:var(--COLOR6);
+  font-weight: bolder;
+  text-align: center;
+}
