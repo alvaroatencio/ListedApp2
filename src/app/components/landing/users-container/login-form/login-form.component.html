@@ -1,13 +1,13 @@
 <div id="loginSection">
   <h3>Iniciar sesión</h3>
-  <form id="loginForm" (ngSubmit)="login()" #loginForm="ngForm">
+  <form id="loginForm" (ngSubmit)="ingresar()" #loginForm="ngForm">
     <div class="divsInputs">
       <i class="fa fa-user icon"></i>
       <input class="inputsG" type="text" placeholder="Usuario |  Email  " required name="user" [(ngModel)]="user" #userInput="ngModel" (blur)="validateEmail()" [ngClass]="{'inputRojo': userInput.invalid && (userInput.dirty || userInput.touched)}">
       <div class="invalid-feedback" *ngIf="userInput.invalid && (userInput.dirty || userInput.touched)">
-        <span class="error-message">
-          {{errorMessageUser}}
-        </span>
+      <span class="error-message">
+        {{errorMessageUser}}
+      </span>
       </div>
     </div>
     <div class="divsInputs">
@@ -15,9 +15,9 @@
       <input class="inputsG" id="inputIngresoContraseña" type="{{showPassword ? 'text' : 'password'}}" placeholder="Contraseña" required name="password" [(ngModel)]="password" #passInput="ngModel" [ngClass]="{'inputRojo': passInput.invalid && (passInput.dirty || passInput.touched)}">
       <i id="iIngresoContraseña" class="fa {{showPassword ? 'fa-eye' : 'fa-eye-slash'}} icon" (click)="togglePasswordVisibility()"></i>
       <div class="invalid-feedback" *ngIf="passInput.invalid && (passInput.dirty || passInput.touched)">
-        <span class="error-message">
-          {{errorMessagePass}}
-        </span>
+      <span class="error-message">
+        {{errorMessagePass}}
+      </span>
       </div>
     </div>
     <div class="divsBotones">

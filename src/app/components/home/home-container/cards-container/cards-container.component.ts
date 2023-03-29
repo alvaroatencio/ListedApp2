@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CuentasService} from "../../../../services/cuentas-service.service";
 import {CuentasModel} from "../../../../models/cuentas-model";
 
@@ -7,20 +7,19 @@ import {CuentasModel} from "../../../../models/cuentas-model";
   templateUrl: './cards-container.component.html',
   styleUrls: ['./cards-container.component.css']
 })
-export class CardsContainerComponent {
+export class CardsContainerComponent implements OnInit{
   cuentas: CuentasModel[] = [];
   cuentasFiltradas: CuentasModel[] = [];
   buscarCuenta: string = "";
 
   constructor(private cuentasService: CuentasService) {}
-
   ngOnInit(): void {
     this.traerCuentas();
   }
-
   traerCuentas(): void {
     this.cuentasService.getCuentas().subscribe(
       (cuentas: CuentasModel[]) => {
+        console.log("hola")
         this.cuentas = cuentas;
         this.filtrarCuentasPorNombre(this.buscarCuenta);
       },
@@ -30,7 +29,6 @@ export class CardsContainerComponent {
       }
     );
   }
-
   filtrarCuentasPorNombre(nombre: string) {
     if (nombre) {
       this.cuentasFiltradas = this.cuentas.filter((cuenta: CuentasModel) =>

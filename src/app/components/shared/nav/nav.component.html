@@ -1,21 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="path/to/your/logo.png" alt="Logo"></a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active" style="color: pink;">Home</a>
+<nav class="lanav">
+  <div class="gridContainer">
+    <div class="logoContainer">
+      <a class="logo me-auto" href="#"><img src="path/to/your/logo.png" alt="Logo" style="height: 50px;"></a>
+    </div>
+    <div class="busquedaContainer">
+      <form class="formContainer" #busquedaForm="ngForm">
+        <input class="barraBusqueda me-2" type="search" placeholder="Buscar cuenta" aria-label="Search"
+               name="buscarCuentasBar"[(ngModel)]="buscarCuentasBar" (ngModelChange)="buscarCuentas()">
+      </form>
+      <button class="botonBusqueda" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="spanBusqueda"></span>
+      </button>
+    </div>
+    <div class="barContainer">
+      <ul class="barList">
+        <li class="barItems">
+          <a class="barLinks" href="#home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/profile" routerLinkActive="active" style="color: pink;">Profile</a>
+        <li class="barItems">
+          <a class="barLinks" href="#profile">Profile</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/landing" routerLinkActive="active" style="color: pink;">LogOut</a>
-        </li>
-        <li class="nav-item">
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Buscar cuenta" aria-label="Search" [(ngModel)]="buscarCuentas" (ngModelChange)="buscarCuentas()">
-          </form>
+        <li class="barItems">
+          <a class="barLinks" href="#landing" (click)="onLogout()">LogOut</a>
         </li>
       </ul>
     </div>

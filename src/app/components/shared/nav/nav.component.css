@@ -1,0 +1,116 @@
+.lanav {
+  background-color: #212529;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  grid-column-gap: 20px;
+}
+
+.logoContainer {
+  text-align: start;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+}
+
+.busquedaContainer {
+  text-align: center;
+}
+.formContainer {
+  display: flex;
+  align-items: center;
+}
+.formContainer .barraBusqueda {
+  width: 100%;
+}
+.botonBusqueda {
+  border: none;
+}
+
+.botonBusqueda:focus {
+  outline: none;
+}
+
+.spanBusqueda {
+  background-color: #fff;
+  border-radius: 2px;
+  height: 2px;
+  width: 20px;
+  margin-top: 4px;
+}
+
+.barraBusqueda {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  margin-right: 20px;
+  padding: 5px 10px;
+  width: 200px;
+}
+
+.barraBusqueda:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+  color: #fff;
+  outline: none;
+}
+
+
+.barContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.barList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+.barItems {
+  padding-inline-start:0;
+  margin-left: 5px;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.barLinks {
+  color: #fff;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.barLinks.active {
+  color: pink;
+}
+
+@media screen and (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr auto;
+  }
+  .barContainer {
+    display: none;
+  }
+  .busquedaContainer {
+    grid-column: 1 / -1;
+  }
+  .botonBusqueda {
+    display: block;
+  }
+  .barItems {
+    display: block;
+    margin: 10px 0;
+    max-width: none;
+  }
+}

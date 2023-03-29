@@ -18,4 +18,8 @@ export class UsuariosLoginService {
   login(usuario: string, password: string): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(this.loginUrl, { usuario, password });
   }
+  logout() {
+    sessionStorage.removeItem('token');
+    localStorage.removeItem('token');
+  }
 }

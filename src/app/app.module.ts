@@ -18,7 +18,7 @@ import {NavComponent} from './components/shared/nav/nav.component';
 import {RouterOutlet} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {HomeComponent} from "./components/home/home.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppComponent} from "./app.component";
 import {HttpClientModule} from "@angular/common/http";
 
@@ -45,7 +45,8 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterOutlet
+    RouterOutlet,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

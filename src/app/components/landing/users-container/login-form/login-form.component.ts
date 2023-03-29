@@ -9,26 +9,24 @@ import { LoginResponse } from 'src/app/models/responses/loginResponse';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent {
+
   user: string="";
   password: string="";
   rememberMe: boolean=false;
   showPassword: boolean=false;
   errorMessageUser: string="Ingrese su usuario o email";
   errorMessagePass: string="Debe ingresar su contraseña";
-
-  constructor(private usuariosLoginService: UsuariosLoginService, private router: Router) {
+  constructor(private usuariosLoginService: UsuariosLoginService, private router : Router) {
     this.showPassword = false;
   }
-  login() {
-    this.usuariosLoginService.login(this.user, this.password).subscribe(
+  ingresar() {
+    console.log(this.user + "  "+this.password)
+    this.
+    usuariosLoginService.
+    login(this.user,this.password).subscribe(
       (response: LoginResponse) => {
-          if (response.token != null) {
-            //agregar funcion de guardar en session o en local
-            sessionStorage.setItem("token", response.token);
-            this.router.navigate(['/home']).then();
-          } else {
-            console.log(response.message);
-        }
+          sessionStorage.setItem("token", response.token);
+          this.router.navigate(['/home']).then();
       },
       error => {
         console.log('Ha ocurrido un error');
