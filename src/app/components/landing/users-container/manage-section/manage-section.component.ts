@@ -1,26 +1,21 @@
 import { Component } from '@angular/core';
-import { SwalComponent} from "@sweetalert2/ngx-sweetalert2";
-import Swal from "sweetalert2";
-
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+import {CuentasFormComponent} from "../../../home/home-container/cuentas-form/cuentas-form.component";
+import {NuevoUsuarioFormComponent} from "./nuevo-usuario-form/nuevo-usuario-form.component";
 @Component({
   selector: 'app-manage-section',
   templateUrl: './manage-section.component.html',
   styleUrls: ['./manage-section.component.css']
 })
 export class ManageSectionComponent {
+  bsModalRef?: BsModalRef;
+  constructor(private modalService: BsModalService) {
+  }
   crearUsuario(){
-    Swal.fire({
-      title: 'Formulario de contacto',
-      html:
-        '<input id="swal-input1" class="swal2-input" placeholder="Nombre">' +
-        '<input id="swal-input2" class="swal2-input" placeholder="Correo electrónico">',
-      focusConfirm: false,
-      preConfirm: () => {
-        return [
-          (document.getElementById('swal-input1') as HTMLInputElement)?.value,
-          (document.getElementById('swal-input2') as HTMLInputElement)?.value
-        ];
-      }
+    this.bsModalRef = this.modalService.show(NuevoUsuarioFormComponent);
+    this.bsModalRef.onHidden?.subscribe(() => {
+      console.log('El modal se cerró');
+      // Aquí puedes realizar las acciones necesarias
     });
   }
   validarForm(){

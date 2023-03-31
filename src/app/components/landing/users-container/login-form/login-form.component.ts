@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import { UsuariosLoginService } from 'src/app/services/usuarios-login.service';
 import { LoginResponse } from 'src/app/models/responses/loginResponse';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login-form',
@@ -20,7 +21,6 @@ export class LoginFormComponent {
     this.showPassword = false;
   }
   ingresar() {
-    console.log(this.user + "  "+this.password)
     this.
     usuariosLoginService.
     login(this.user,this.password).subscribe(
@@ -28,9 +28,12 @@ export class LoginFormComponent {
           sessionStorage.setItem("token", response.token);
           this.router.navigate(['/home']).then();
       },
-      error => {
-        console.log('Ha ocurrido un error');
-        console.log(error);
+      (error: any) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: error.error.message,
+        });
       }
     );
   }

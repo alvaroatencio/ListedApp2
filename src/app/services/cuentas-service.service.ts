@@ -11,7 +11,7 @@ export class CuentasService {
   private apiUrl = environment.urlAPI;
   private endpoint = '/cuentas';
   private token = sessionStorage.getItem('token') ?? '';
-  private headers = new HttpHeaders().set('Authorization', this.token);
+  private headers = new HttpHeaders().set('Authorization','Bearer '+ this.token);
   constructor(private http: HttpClient) { }
   getCuentas(): Observable<CuentasModel[]> {
     console.log("entra con token: "+this.token)

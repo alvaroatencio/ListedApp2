@@ -1,0 +1,65 @@
+.comp{
+  background-color: black;
+}
+.banner{
+  height: 80px;
+  background-color: black;
+}
+.row{
+  margin: 120px;
+}
+.cardsContainer{
+  border: none;
+  margin-top: 6vh;
+  height: 94vh;
+  width: 60vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.gridContainer {
+  margin-top: 120px;
+  border: none;
+  margin-right: -10px;
+  scroll-snap-align: start;
+}
+.scrollContainer{
+  border: none;
+  height: 100%;
+  margin: 15px;
+}
+.card-body{
+  border: none;
+  border-radius: 25px;
+  background-color: var(--WHITE);
+  box-shadow: 0 0 150px 15px var(--VIOLET);
+  margin: 20px;
+  padding: 20px;
+}
+.titular{
+  font-size: 20px;
+}
+.comp2{
+  background-color: black;
+}
+.formsLocos{
+  position: fixed;
+  right: 0px;
+  top: 35px;
+  width: 40vw;
+  height: 100vh;
+  background-color: white;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: black;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--VIOLET);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}

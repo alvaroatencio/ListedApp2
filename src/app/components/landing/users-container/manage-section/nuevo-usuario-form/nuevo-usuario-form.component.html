@@ -1,23 +1,74 @@
+<div class="modal-backdrop">
+  <div class="modal-section">
+    <div class="modal-header">
+      <h5 class="section__title">Registrá tu cuenta!</h5>
+      <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Completá tus datos para crear tu cuenta. Luego te pediremos que valides tu mail.</p>
+      <form class="section__form" (ngSubmit)="crear()" #modalForm="ngForm">
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-user"></i>
+          <input class="form-input" type="name" placeholder="Usuario" required name="user"
+                 [(ngModel)]="user" #userInput="ngModel" (blur)="validateUsuario()"
+                 [ngClass]="{'input--rojo': userInput.invalid && (userInput.dirty || userInput.touched)}"
+          >
+          <div class="input__error"
+               *ngIf="userInput.invalid && (userInput.dirty || userInput.touched)"
+          >
+      <span class="error-message">
+        {{errorMessageUser}}
+      </span>
+          </div>
+        </div>
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-envelope icon"></i>
+          <input class="form-input" type="email" placeholder="Mail" required name="email"
+                 [(ngModel)]="mail" #mailInput="ngModel" (blur)="validateEmail()"
+                 [ngClass]="{'input--rojo': mailInput.invalid && (mailInput.dirty || mailInput.touched)}">
+          <div class="input__error"
+               *ngIf="mailInput.invalid && (mailInput.dirty || mailInput.touched)">
+      <span class="error-message">
+        {{errorMessageMail}}
+      </span>
+          </div>
+          <div class="input-containers">
+            <i class="input-container__icon fa fa-lock icon"></i>
+            <input class="form-input" type="password" placeholder="Contraseña" required name="password"
+                   [(ngModel)]="password" #passInput="ngModel"
+                   [ngClass]="{'input--rojo': passInput.invalid && (passInput.dirty || passInput.touched)}"
+            >
+            <i class="input-container__icon fa {{showPassword ? 'fa-eye' : 'fa-eye-slash'}} icon"
+               (click)="togglePasswordVisibility()"></i>
+            <div class="input__error"
+                 *ngIf="passInput.invalid && (passInput.dirty || passInput.touched)">
+            <span class="error-message">
+              {{errorMessagePass}}
+            </span>
+            </div>
+          </div>
+          <div class="input-containers">
+            <i class="input-container__icon fa {{showPassword ? 'fa-eye' : 'fa-eye-slash'}} icon"
+               (click)="togglePasswordVisibility()"></i>
+            <input class="form-input" type="password" placeholder="Repetir contraseña"
+                   required name="password">
+            <i id="iRegistroContraseñaRepetir" class="input-container__icon fa fa-eye-slash icon"></i>
+            <div class="input__error"
+                 *ngIf="userInput.invalid && (userInput.dirty || userInput.touched)">
+      <span class="error-message">
+        {{errorMessageMail}}
+      </span>
+            </div>
+          </div>
+          <button class="button-container__button" type="submit"
+                  [disabled]="modalForm.invalid"
+          >Ingresar
+          </button>
+          </div>
+      </form>
+    </div>
 
-<p>Completá tus datos para crear tu cuenta. Luego te pediremos que valides tu mail.</p>
-<form id="formCrearUsuario">
-  <div class="divsInput">
-    <i class="fa fa-user icon"></i>
-    <input id="inputRegistroUsuarior" type="name" class="login" placeholder="Usuario" required name="user">
   </div>
-  <div class="divsInput">
-    <i class="fa fa-envelope icon"></i>
-    <input id="inputRegistroMail" type="email" class="login" placeholder="Mail" required name="email">
-  </div>
-  <div class="divsInput">
-    <i class="fa fa-lock icon"></i>
-    <input id="inputRegistroContraseña" type="password" class="login" placeholder="Contraseña" required name="password">
-    <i id="iRegistroContraseña" class="fa fa-eye-slash icon"></i>
-  </div>
-  <div class="divsInput">
-    <i class="fa fa-lock icon"></i>
-    <input id="inputRegistroContraseñaRepetir" type="password" class="login" placeholder="Repetir contraseña" required name="password">
-    <i id="iRegistroContraseñaRepetir" class="fa fa-eye-slash icon"></i>
-  </div>
-  <input id="inputCrearUsuario" type="Button" value="Crear usuario">
-</form>
+</div>

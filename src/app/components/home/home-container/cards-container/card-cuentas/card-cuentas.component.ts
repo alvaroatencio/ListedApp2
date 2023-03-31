@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CardsContainerComponent} from "../cards-container.component";
 
 @Component({
   selector: 'app-card-cuentas',

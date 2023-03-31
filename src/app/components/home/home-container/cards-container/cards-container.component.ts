@@ -12,14 +12,16 @@ export class CardsContainerComponent implements OnInit{
   cuentasFiltradas: CuentasModel[] = [];
   buscarCuenta: string = "";
 
-  constructor(private cuentasService: CuentasService) {}
+  constructor(private cuentasService: CuentasService) {
+    this.cuentasFiltradas = [];
+  }
   ngOnInit(): void {
     this.traerCuentas();
+    this.filtrarCuentasPorNombre(this.buscarCuenta);
   }
   traerCuentas(): void {
     this.cuentasService.getCuentas().subscribe(
       (cuentas: CuentasModel[]) => {
-        console.log("hola")
         this.cuentas = cuentas;
         this.filtrarCuentasPorNombre(this.buscarCuenta);
       },

@@ -1,17 +1,39 @@
-<div class="cardsContainer mt-5">
-  <div class="row">
-    <div class="col-md-4" *ngFor="let cuenta of cuentasFiltradas">
-      <div class="card-body">
-        <h5 class="card-title">{{ cuenta.titular.nombres }}</h5>
-        <p class="card-text">Alias: {{ cuenta.alias }}</p>
-        <p class="card-text">Banco: {{ cuenta.banco }}</p>
-        <p class="card-text">CBU: {{ cuenta.cbu }}</p>
-        <p class="card-text">Número de cuenta: {{ cuenta.nroCuenta }}</p>
-        <p class="card-text">Sucursal: {{ cuenta.sucursal }}</p>
+<div class="comp">
+
+  </div>
+  <div class="comp2">
+    <div class="cardsContainer">
+      <div class="row">
+        <div class="gridContainer"*ngFor="let cuenta of cuentasFiltradas">
+          <div class="scrollContainer">
+            <div class="card-body">
+              <div class="noInputs-containersTitle">
+                <input class="noInputs Title" value="{{ cuenta.titular.nombres }}">
+              </div>
+              <div class="noInputs-containers">
+                <p class="noInputs Normal">Banco: {{ cuenta.banco }}</p>
+              </div>
+              <div class="noInputs-containers">
+                <p class="noInputs Normal">Sucursal: {{ cuenta.sucursal }}</p>
+              </div>
+              <div class="noInputs-containers">
+                <p class="noInputs Normal">Número de cuenta: {{ cuenta.nroCuenta }}</p>
+              </div>
+              <div class="noInputs-containers">
+                <p class="noInputs Normal">Alias: {{ cuenta.alias }}</p>
+              </div>
+              <div class="noInputs-containers">
+                <p class="noInputs Normal">CBU: {{ cuenta.cbu }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="cuentasFiltradas && cuentasFiltradas.length == 0" class="col-md-12 text-center">
+          <h4>No se encontraron cuentas</h4>
+        </div>
       </div>
-    </div>
-    <div *ngIf="cuentasFiltradas.length == 0" class="col-md-12 text-center">
-      <h4>No se encontraron cuentas</h4>
+    <div class="formsLocos">
+      <app-cuentas-form></app-cuentas-form>
     </div>
   </div>
 </div>

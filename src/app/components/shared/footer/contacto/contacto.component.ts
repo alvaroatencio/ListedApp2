@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import jsPDF from 'jspdf';
 
+
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',

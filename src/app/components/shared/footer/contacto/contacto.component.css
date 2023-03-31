@@ -1,5 +1,5 @@
 form,h3{
-  background-color: var(--COLOR2);
+  background-color: var(--PURPLE);
   margin-top: 0;
   margin-bottom: 0;
   padding: 20px 80px 30px;
@@ -20,12 +20,12 @@ input{
 button{
   border-radius: 30px;
   width: 100px;
-  background-color: var(--COLOR5);
-  color: var(--LETTER1);
+  background-color: var(--REDPINKLIGTH);
+  color: var(--WHITE);
 }
 
 .error{
-  color:var(--COLOR6);
+  color:var(--PINK);
   font-weight: bolder;
   text-align: center;
 }

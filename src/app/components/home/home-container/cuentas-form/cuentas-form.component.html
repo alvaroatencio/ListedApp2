@@ -1,0 +1,87 @@
+<div class="modal-backdrop">
+  <div class="modal-section">
+    <div class="modal-header">
+      <h5 class="section__title">Carga de cuentas bancarias</h5>
+    </div>
+    <div class="modal-body">
+      <p>Carga los datos de la cuenta! Nos encargaremos del resto.</p>
+      <form class="section__form"(ngSubmit)="crear()" #modalForm="ngForm">
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-user"></i>
+          <input class="form-input" type="name" placeholder="Titular" required name="titular"
+                 [(ngModel)]="nombres" #nombresInput="ngModel" (blur)="validateTitular()"
+                 [ngClass]="{'input--rojo': nombresInput.invalid && (nombresInput.dirty || nombresInput.touched)}"
+          >
+          <div class="input__error"
+               *ngIf="nombresInput.invalid && (nombresInput.dirty || nombresInput.touched)"
+          >
+      <span class="error-message">
+        {{errorMessageTitular}}
+      </span>
+          </div>
+        </div>
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-envelope icon"></i>
+          <input class="form-input" type="email" placeholder="Mail" required name="email"
+                 [(ngModel)]="mail1" #mail1Input="ngModel" (blur)="validateEmail1()"
+                 [ngClass]="{'input--naranja': mail1Input.invalid && (mail1Input.dirty || mail1Input.touched)}"
+          >
+        </div>
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-envelope icon"></i>
+          <input class="form-input" type="number" placeholder="CUIT/CUIL" required name="cuit"
+                 [(ngModel)]="cuit" #cuitInput="ngModel" (keyup)="validateCuit()"
+                 [ngClass]="{'input--naranja': cuitInput.invalid && (cuitInput.dirty || cuitInput.touched)}"
+          >
+        </div>
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-lock icon"></i>
+          <input class="form-input" type="banco" placeholder="Banco" required name="banco"
+                 [(ngModel)]="nroCta" #bancoInput="ngModel"
+                 [ngClass]="{'input--naranja': sucursallnput.invalid && (sucursallnput.dirty || sucursallnput.touched)}"
+          >
+          <div class="input__error"
+               *ngIf="sucursallnput.invalid && (sucursallnput.dirty || sucursallnput.touched)">
+          </div>
+        </div>
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-lock icon"></i>
+          <input class="form-input" type="sucursañ" placeholder="Sucursal" required name="sucursal"
+                 [(ngModel)]="sucursal" #sucursallnput="ngModel"
+                 [ngClass]="{'input--naranja': sucursallnput.invalid && (sucursallnput.dirty || sucursallnput.touched)}"
+          >
+          <div class="input__error"
+               *ngIf="sucursallnput.invalid && (sucursallnput.dirty || sucursallnput.touched)">
+          </div>
+        </div>
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-lock icon"></i>
+          <input class="form-input" type="Nro de cuenta" placeholder="Nro de cuenta" required name="ntoCta"
+                 [(ngModel)]="nroCta" #nroCtaInput="ngModel"
+                 [ngClass]="{'input--naranja': nroCtaInput.invalid && (nroCtaInput.dirty || nroCtaInput.touched)}"
+          >
+          <div class="input__error"
+               *ngIf="nroCtaInput.invalid && (nroCtaInput.dirty || nroCtaInput.touched)">
+          </div>
+        </div>
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-lock icon"></i>
+          <input class="form-input" type="CBU" placeholder="CBU" required name="CBU"
+                 [(ngModel)]="CBU" #CBUInput="ngModel"
+                 [ngClass]="{'input--naranja': CBUInput.invalid && (CBUInput.dirty || CBUInput.touched)}">
+          <div class="input__error"
+               *ngIf="CBUInput.invalid && (CBUInput.dirty || CBUInput.touched)">
+          </div>
+        </div>
+        <div class="input-containers">
+          <i class="input-container__icon fa fa-lock icon"></i>
+          <input class="form-input" type="alias" placeholder="Alias" required name="alias">
+        </div>
+        <button class="button-container__button" type="submit"
+                [disabled]="modalForm.invalid"
+        >Ingresar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

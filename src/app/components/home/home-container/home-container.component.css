@@ -1,0 +1,21 @@
+.botonAgregar {
+  position: fixed;
+  bottom: 40px;
+  right: 35px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 40px;
+  background-color: var(--REDPINKLIGTH);
+  box-shadow: 0 0 50px 5px white;
+  font-size: 45px;
+  color: white;
+}
+.botonAgregar:active{
+  transition: 0.7s;
+  transform: rotateY(200grad);
+}
+.botonAgregar:hover{
+  transition: 0.7s;
+  transform: rotateZ(200grad);
+}

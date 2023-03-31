@@ -13,16 +13,20 @@
 }
 
 .logoContainer {
-  text-align: start;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 .logo {
   color: #fff;
   text-decoration: none;
+  margin-left: 15px;
 }
 
 .busquedaContainer {
-  text-align: center;
+  margin: auto;
+  width: 100%;
 }
 .formContainer {
   display: flex;

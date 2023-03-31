@@ -1,27 +1,26 @@
 <nav class="lanav">
   <div class="gridContainer">
     <div class="logoContainer">
-      <a class="logo me-auto" href="#"><img src="path/to/your/logo.png" alt="Logo" style="height: 50px;"></a>
+      <a class="logo me-auto"><img src="assets/logo.png" alt="Logo" style="height: 25px;"></a>
     </div>
     <div class="busquedaContainer">
+      <div>
       <form class="formContainer" #busquedaForm="ngForm">
         <input class="barraBusqueda me-2" type="search" placeholder="Buscar cuenta" aria-label="Search"
-               name="buscarCuentasBar"[(ngModel)]="buscarCuentasBar" (ngModelChange)="buscarCuentas()">
+               name="buscarCuentasBar"[(ngModel)]="buscarCuentasBar" (ngModelChange)="buscarCuentas()" (keyup)="buscarCuentas()">
       </form>
-      <button class="botonBusqueda" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="spanBusqueda"></span>
-      </button>
+      </div>
     </div>
     <div class="barContainer">
       <ul class="barList">
         <li class="barItems">
-          <a class="barLinks" href="#home">Home</a>
+          <a class="barLinks" href="/home">Home</a>
         </li>
         <li class="barItems">
-          <a class="barLinks" href="#profile">Profile</a>
+          <a class="barLinks" href="/profile">Profile</a>
         </li>
         <li class="barItems">
-          <a class="barLinks" href="#landing" (click)="onLogout()">LogOut</a>
+          <a class="barLinks" href="/landing" (click)="onLogout()">LogOut</a>
         </li>
       </ul>
     </div>

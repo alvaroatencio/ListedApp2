@@ -1,7 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 import {UsuariosLoginService} from "../../../services/usuarios-login.service";
-import {CardCuentasComponent} from "../../home/home-container/cards-container/card-cuentas/card-cuentas.component";
 import {CardsContainerComponent} from "../../home/home-container/cards-container/cards-container.component";
 
 @Component({

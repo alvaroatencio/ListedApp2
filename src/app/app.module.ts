@@ -14,13 +14,19 @@ import {PanelComponent} from './components/profile/panel/panel.component';
 import {SharedComponent} from './components/shared/shared.component';
 import {FooterComponent} from './components/shared/footer/footer.component';
 import {NavComponent} from './components/shared/nav/nav.component';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import {RouterOutlet} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {HomeComponent} from "./components/home/home.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppComponent} from "./app.component";
 import {HttpClientModule} from "@angular/common/http";
+import {CommonModule} from "@angular/common";
+import {ContactoModule} from "./components/shared/footer/contacto/contacto.module";
+import { CuentasFormComponent } from './components/home/home-container/cuentas-form/cuentas-form.component';
+import { NuevoUsuarioFormComponent } from './components/landing/users-container/manage-section/nuevo-usuario-form/nuevo-usuario-form.component';
+import {BsModalService} from "ngx-bootstrap/modal";
+
 
 @NgModule({
   declarations: [
@@ -38,17 +44,22 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
     NavComponent,
     HomeComponent,
-
+    CuentasFormComponent,
+    NuevoUsuarioFormComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     RouterOutlet,
     ReactiveFormsModule,
+    ContactoModule,
+    SweetAlert2Module,
+    SweetAlert2Module.forRoot()
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

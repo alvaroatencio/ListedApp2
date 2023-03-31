@@ -1,17 +1,227 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
+/*GENERICS*/
 
-body, html {
+body{
   margin: 0;
 }
 
+/*PRESETS*/
+
 :root{
-  --COLOR1:#7F00B2;
-  --COLOR2:#8E22BB;
-  --COLOR3:#AB49CC;
-  --COLOR4:#FF0077;
-  --COLOR5:#FF3885;
-  --COLOR6:#FF57AC;
-  --LETTER1:WHITE;
-  --LETTER2:BLACK;
+  --DARKPURPLE:#7F00B2;
+  --PURPLE:#8E22BB;
+  --VIOLET:#AB49CC;
+  --REDPINK:#FF0077;
+  --REDPINKLIGTH:#FF3885;
+  --PINK:#FF57AC;
+  --WHITE:WHITE;
+  --BLACK:BLACK;
+  --BLACK03:#4d4d4d;
+  --BLACK04:#636c72;
+  --RED:red;
+}
+
+/*FORM*/
+
+.section {
+  background-color: var(--WHITE);
+  border-radius: 15px;
+  box-shadow: 0 0 150px 40px white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  min-width: 400px;
+  padding: 30px;
+  width: 34%;
+}
+.section__title{
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+.input-containers {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.input-containers input{
+  padding: 14px 40px;
+  width: 80%;
+  outline: none;
+  margin-bottom: 15px;
+}
+.input__error {
+  color: var(--RED);
+  font-size: 12px;
+}
+.input__error::before {
+  content: "* ";
+}
+.form-input {
+  border-color: #c9c9c9;
+  border-width: 0 0 1px;
+  box-sizing: border-box;
+}
+.form-input::placeholder{
+  text-align: center;
+}
+.form-input:focus{
+  border-color: var(--VIOLET);
+  color: var(--VIOLET);
+}
+.input--rojo{
+  border: solid var(--RED) 1px ;
+}
+.input-container__icon{
+  font-size: 18px;
+  opacity: 0.3;
+  margin-top: 12px;
+  min-width: 40px;
+  position: absolute;
+}
+.fa-eye{
+  position: absolute;
+  margin-left: -40px;
+  cursor: pointer;
+}
+.fa-eye-slash{
+  position: absolute;
+  margin-left: -40px;
+  cursor: pointer;
+}
+#checkbox__label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--BLACK04);
+  user-select: none;
+  cursor: pointer;
+}
+#checkbox__input {
+  margin-top: 10px;
+}
+#checkbox__input:checked{
+  accent-color: var(--PURPLE);
+}
+.button-container__button{
+  margin-top: 25px;
+  text-align: center;
+  border: 0;
+  border-radius: 0.25em;
+  background-color: var(--VIOLET);
+  color: var(--WHITE);
+  font-size: 1em;
+  width: 200px;
+  height: 38px;
+}
+.button-container__button:enabled:hover{
+  transition: 0.7s;
+  transform: translateY(2px);
+  box-shadow: 0 0 15px 1px var(--VIOLET);
+  background-color: var(--PURPLE);
+}
+.button-container__button:disabled{
+  opacity: 0.5;
+  height: 38px;
+}
+
+/*MODALS*/
+
+.modal-backdrop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-section {
+  background-color: var(--WHITE);
+  border-radius: 15px;
+  box-shadow: 0 0 150px 40px var(--VIOLET);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding: 30px;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  margin: 0 20px;
+  z-index: 1001;
+}
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 15px;
+}
+.close {
+  background-color: var(--WHITE);
+  border:none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 1rem;
+  color: var(--VIOLET);
+  font-size: 50px;
+}
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.modal-body {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1rem;
+}
+.modal-footer {
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 15px;
+}
+
+/* Extras */
+
+.Title{
+  text-align: center;
+  font-size: 23px;
+  border: 1px solid var(--PURPLE);
+  box-shadow: 0 0 15px 1px var(--PURPLE);
+  color: var(--VIOLET);
+}
+.noInputs{
+  margin: 15px;
+  font-family: "Segoe UI Semibold";
+  box-sizing: border-box;
+  background-color: var(--WHITE);
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 0 15px 1px var(--PINK);
+  border-radius: 25px;
+  padding: 14px 14px;
+  width: 65%;
+  outline: none;
+}
+.Normal{
+  color: var(--BLACK04);
+  border: 1px solid var(--REDPINKLIGTH);
+  box-shadow: 0 0 15px 1px var(--PINK);
+  font-size: 15px;
+}
+.noInputs-containers{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.noInputs-containersTitle{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
 }

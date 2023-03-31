@@ -5,13 +5,13 @@
 
 #panelGestion {
   margin-top: 30px;
-  background-color: var(--COLOR3);
+  background-color: var(--VIOLET);
   border-radius: 15px 15px 15px 15px;
   height: 60px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 0 20px 0px var(--COLOR3);
+  box-shadow: 0 0 20px 0px var(--VIOLET);
 }
 
 #inputCrearUsuario {
@@ -64,13 +64,11 @@
 }
 
 .extra:hover{
-  color: var(--COLOR3);
+  color: var(--VIOLET);
   transition: 0.5s;
   opacity: 1;
   transform: translateY(3px);
 }
-
-
 
 
 
