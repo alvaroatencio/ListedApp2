@@ -157,6 +157,7 @@ body{
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 15px;
+  height: 2vh;
 }
 .close {
   background-color: var(--WHITE);
@@ -174,7 +175,6 @@ body{
 }
 .modal-body {
   text-align: center;
-  padding: 15px 0;
   font-size: 1rem;
 }
 .modal-footer {
@@ -183,6 +183,24 @@ body{
   justify-content: flex-end;
   align-items: center;
   padding-top: 15px;
+}
+
+.button-container__buttonFlat{
+  bottom: 35px;
+  right: 135px;
+  position: fixed;
+  text-align: center;
+  border: 0;
+  border-radius: 40px;
+  background-color: var(--VIOLET);
+  color: var(--WHITE);
+  font-size: 1em;
+  width: 40px;
+  height: 40px;
+}
+.button-container__buttonFlat:hover{
+  transition: 0.3s;
+  transform: scale(150%);
 }
 
 /* Extras */

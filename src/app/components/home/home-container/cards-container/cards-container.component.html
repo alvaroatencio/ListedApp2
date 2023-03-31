@@ -5,10 +5,25 @@
     <div class="cardsContainer">
       <div class="row">
         <div class="gridContainer"*ngFor="let cuenta of cuentasFiltradas">
-          <div class="scrollContainer">
+          <div class="scrollContainer" [class.marcada]="cuentaMarcada" (click)='seleccionarCuenta(this.cuenta)'>
+            <div class="extendd"></div>
+            <div class="botonesFlotantes">
+              <button class="los downloadButton" (click)='mostrar("boton")'>
+                <i class="flotInput-container__icon fa fa-download"></i>
+              </button>
+              <button class="los copyButton" (click)="copiarCuenta()">
+                <i class="flotInput-container__icon fa fa-clipboard"></i>
+              </button>
+              <button class="los editButton">
+                <i class="flotInput-container__icon fa fa-pencil"></i>
+              </button>
+              <button class="los deleteButton">
+                <i class="flotInput-container__icon fa fa-trash"></i>
+              </button>
+            </div>
             <div class="card-body">
               <div class="noInputs-containersTitle">
-                <input class="noInputs Title" value="{{ cuenta.titular.nombres }}">
+                <input class="noInputs Title" value="{{ cuenta.titular?.nombres }}">
               </div>
               <div class="noInputs-containers">
                 <p class="noInputs Normal">Banco: {{ cuenta.banco }}</p>
@@ -25,6 +40,7 @@
               <div class="noInputs-containers">
                 <p class="noInputs Normal">CBU: {{ cuenta.cbu }}</p>
               </div>
+              <div class="checkbox" [ngClass]="{'checked': cuenta == cuentaSeleccionada, 'unchecked': cuenta != cuentaSeleccionada}"></div>
             </div>
           </div>
         </div>

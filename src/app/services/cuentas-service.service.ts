@@ -17,4 +17,8 @@ export class CuentasService {
     console.log("entra con token: "+this.token)
     return this.http.get<CuentasModel[]>(this.apiUrl+this.endpoint, { headers: this.headers });
   }
+  createCuentas(form:CuentasModel):Observable<CuentasModel>
+  {
+    return this.http.post<CuentasModel>(this.apiUrl+this.endpoint,form,{ headers: this.headers});
+  }
 }

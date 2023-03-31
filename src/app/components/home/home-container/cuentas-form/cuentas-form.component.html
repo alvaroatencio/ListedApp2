@@ -4,7 +4,6 @@
       <h5 class="section__title">Carga de cuentas bancarias</h5>
     </div>
     <div class="modal-body">
-      <p>Carga los datos de la cuenta! Nos encargaremos del resto.</p>
       <form class="section__form"(ngSubmit)="crear()" #modalForm="ngForm">
         <div class="input-containers">
           <i class="input-container__icon fa fa-user"></i>
@@ -35,18 +34,18 @@
           >
         </div>
         <div class="input-containers">
-          <i class="input-container__icon fa fa-lock icon"></i>
+          <i class="input-container__icon fa fa-university icon"></i>
           <input class="form-input" type="banco" placeholder="Banco" required name="banco"
-                 [(ngModel)]="nroCta" #bancoInput="ngModel"
-                 [ngClass]="{'input--naranja': sucursallnput.invalid && (sucursallnput.dirty || sucursallnput.touched)}"
+                 [(ngModel)]="banco" #bancoInput="ngModel"
+                 [ngClass]="{'input--naranja': bancoInput.invalid && (bancoInput.dirty || bancoInput.touched)}"
           >
           <div class="input__error"
-               *ngIf="sucursallnput.invalid && (sucursallnput.dirty || sucursallnput.touched)">
+               *ngIf="bancoInput.invalid && (bancoInput.dirty || bancoInput.touched)">
           </div>
         </div>
         <div class="input-containers">
-          <i class="input-container__icon fa fa-lock icon"></i>
-          <input class="form-input" type="sucursañ" placeholder="Sucursal" required name="sucursal"
+          <i class="input-container__icon fa fa-asterisk icon"></i>
+          <input class="form-input" type="sucursal" placeholder="Sucursal" required name="sucursal"
                  [(ngModel)]="sucursal" #sucursallnput="ngModel"
                  [ngClass]="{'input--naranja': sucursallnput.invalid && (sucursallnput.dirty || sucursallnput.touched)}"
           >
@@ -55,7 +54,7 @@
           </div>
         </div>
         <div class="input-containers">
-          <i class="input-container__icon fa fa-lock icon"></i>
+          <i class="input-container__icon fa fa-credit-card icon"></i>
           <input class="form-input" type="Nro de cuenta" placeholder="Nro de cuenta" required name="ntoCta"
                  [(ngModel)]="nroCta" #nroCtaInput="ngModel"
                  [ngClass]="{'input--naranja': nroCtaInput.invalid && (nroCtaInput.dirty || nroCtaInput.touched)}"
@@ -65,7 +64,7 @@
           </div>
         </div>
         <div class="input-containers">
-          <i class="input-container__icon fa fa-lock icon"></i>
+          <i class="input-container__icon fa fa-hashtag icon"></i>
           <input class="form-input" type="CBU" placeholder="CBU" required name="CBU"
                  [(ngModel)]="CBU" #CBUInput="ngModel"
                  [ngClass]="{'input--naranja': CBUInput.invalid && (CBUInput.dirty || CBUInput.touched)}">
@@ -74,12 +73,17 @@
           </div>
         </div>
         <div class="input-containers">
-          <i class="input-container__icon fa fa-lock icon"></i>
-          <input class="form-input" type="alias" placeholder="Alias" required name="alias">
+          <i class="input-container__icon fa fa-address-card icon"></i>
+          <input class="form-input" type="alias" placeholder="Alias" required name="alias"
+                 [(ngModel)]="alias" #aliasInput="ngModel"
+                 [ngClass]="{'input--naranja': aliasInput.invalid && (aliasInput.dirty || aliasInput.touched)}">
+          <div class="input__error"
+               *ngIf="aliasInput.invalid && (aliasInput.dirty || aliasInput.touched)">
+          </div>
         </div>
-        <button class="button-container__button" type="submit"
+        <button class="button-container__buttonFlat" type="submit"
                 [disabled]="modalForm.invalid"
-        >Ingresar
+        >+
         </button>
       </form>
     </div>
