@@ -110,28 +110,39 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #666;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #aaa;
   border-radius: 50%;
+  background-color: white;
+  transition: border-color 0.3s ease;
 }
 
 .scrollContainer .checkbox::before {
   content: "";
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 36px;
-  height: 36px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
+  background-image: url("src/app/assets/assent-mark-o.png");
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .scrollContainer .checkbox.unchecked::before {
-  background-color: white;
+  opacity: 0;
+}
+
+.scrollContainer .checkbox.checked {
+  border-color: var(--VIOLET);
 }
 
 .scrollContainer .checkbox.checked::before {
-  background-color: var(--VIOLET);
+  opacity: 1;
 }
 .checkbox{
   margin-top:600px;

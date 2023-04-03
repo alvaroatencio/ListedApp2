@@ -1,10 +1,8 @@
 import {Component} from '@angular/core';
-import { BsModalRef } from 'ngx-bootstrap/modal';
 import {CuentasService} from "../../../../services/cuentas-service.service";
 import {CuentasModel} from "../../../../models/cuentas-model";
 import {TitularesModel} from "../../../../models/titulares-model";
 import {TitularesServiceService} from "../../../../services/titulares-service.service";
-import {LoginResponse} from "../../../../models/responses/loginResponse";
 import Swal from "sweetalert2";
 import {Router} from "@angular/router";
 import {CardsContainerComponent} from "../cards-container/cards-container.component";
